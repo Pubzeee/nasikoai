@@ -29,7 +29,10 @@ def main():
         sys.exit(1)
 
     try:
+        # Initialize with the path and the max_chars
         agent = READMEAgent(project_path, max_chars_per_file=args.max_chars)
+        
+        # Call the 'generate' method we just added
         result = agent.generate(dry_run=args.dry_run)
         print(result)
     except Exception as e:
